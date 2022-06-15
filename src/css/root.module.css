@@ -1,0 +1,45 @@
+:root {
+  --black: #0a1b1b;
+  --white: #fff;
+  /* --accent: #633fbd; */
+  --accent: #1da1f2;
+}
+
+* {
+  font-family: "Josefin Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  color: var(--black);
+}
+
+body {
+  background-color: var(--white);
+  /* background-color: #eaeff2; */
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+li {
+  list-style-type: none;
+}
+
+small {
+  display: block;
+}
+
+main {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}

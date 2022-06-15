@@ -1,0 +1,21 @@
+.container {
+  border: 1px solid #000;
+  width: 100%;
+  max-width: 1450px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.25rem 2.25rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.heading {
+  font-family: "Rozha One", serif;
+  /* font-family: "Coustard"; */
+}
