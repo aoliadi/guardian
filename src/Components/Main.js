@@ -7,28 +7,18 @@ import useRandom from "./Hooks/useRandom";
 import { useEffect } from "react";
 
 function Main() {
-  const url = `http://localhost:8000/response`;
-  const { data, loading, err } = useFetch(url);
-  // debugger;
-
   // const category = ["sports", "politics", "entertainment"];
-  // const amount = [2, 4, 5, 6, 7, 8];
-  // const chosenCategory = category[2];
-  // const amountOfNews = amount[useRandom(amount.length)];
-  // const amountOfNews = amount[2];
-  // const chosenCategory = category[useRandom(category.length)];
-  // useEffect(() => {
-  // console.log(chosenCategory);
-  // }, []);
-
-  // const randomNumber = Math.floor(Math.random() * data.length);
-
-  // const state = [[1, 1], [2, 2], 5, 6, 7, 8];
+  const theGuardianAPI = `https://content.guardianapis.com/search`;
+  const theGuardianParams = {
+    "api-key": "db0f505c-2e61-417a-b77b-925796f744d7",
+    "page-size": 25,
+  };
+  const { data, loading, err } = useFetch(theGuardianAPI, theGuardianParams);
 
   return (
     <main className={general.container}>
       {err && <h1 className="">{err}</h1>}
-      {loading || <Test data={data} />}
+      {loading || <Test newsArr={data.response.results} />}
     </main>
   );
 }
