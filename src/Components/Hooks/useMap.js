@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import style from "../../css/news.module.css";
 
-const useMap = (data, orientation) => {
+function useMap(data, orientation) {
   const [theNews, setTheNews] = useState(null);
 
   useEffect(() => {
     switch (orientation) {
       case "vertical":
       case "horizontal":
+        // setTheNews("empty!");
         setTheNews(
           data.map((news) => (
             <article className={`style.${orientation}`} key={news.id}>
@@ -29,6 +30,7 @@ const useMap = (data, orientation) => {
       default:
         setTheNews(
           data.map((news) => (
+            // <section className={article.one_card}>{oneCard}</section>
             <article className={style.only} key={news.id}>
               <small className={style.author}>
                 by author name <span className=""></span>{" "}
@@ -45,7 +47,7 @@ const useMap = (data, orientation) => {
     }
   }, []);
 
-  return { theNews };
-};
+  return theNews;
+}
 
 export default useMap;

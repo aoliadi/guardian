@@ -9,9 +9,10 @@ import { useEffect } from "react";
 function Main() {
   const url = `http://localhost:8000/response`;
   const { data, loading, err } = useFetch(url);
+  // debugger;
 
-  const category = ["sports", "politics", "entertainment"];
-  const amount = [2, 4, 5, 6, 7, 8];
+  // const category = ["sports", "politics", "entertainment"];
+  // const amount = [2, 4, 5, 6, 7, 8];
   // const chosenCategory = category[2];
   // const amountOfNews = amount[useRandom(amount.length)];
   // const amountOfNews = amount[2];

@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 
-function useRandom(range) {
-  const [randomNumber, setRandomNumber] = useState(0);
-
+function useRandom(maxVal) {
+  const [randomNumber, setRandomNumber] = useState();
+  // let randomNumber;
   useEffect(() => {
-    setRandomNumber(Math.ceil(Math.random() * range));
-  }, [range]);
+    const randomNumber = Math.ceil(Math.random() * maxVal);
+    setRandomNumber(randomNumber);
+  }, [maxVal]);
 
   return randomNumber;
 }
