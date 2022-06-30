@@ -9,6 +9,10 @@
   flex-flow: row wrap;
 }
 
+.title {
+  text-transform: capitalize;
+}
+
 .title_link {
   composes: heading from "./general.module.css";
 }
