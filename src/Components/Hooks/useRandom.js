@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react";
 
-function useRandom(maxVal) {
+function useRandom(arr, amountOfExtract) {
   const [randomNumber, setRandomNumber] = useState();
-  // let randomNumber;
-  useEffect(() => {
-    const randomNumber = Math.ceil(Math.random() * maxVal);
-    setRandomNumber(randomNumber);
-  }, [maxVal]);
+  const [chosenItem, setChosenItem] = useState();
 
-  return randomNumber;
+  useEffect(() => {
+    const randomNumber = Math.floor(Math.random() * arr.length);
+    const chosenItem = arr[randomNumber];
+    // arr.splice(randomNumber, amountOfExtract);
+
+    setRandomNumber(randomNumber);
+    setChosenItem(chosenItem);
+  }, []);
+
+  return [chosenItem, arr];
 }
 
 export default useRandom;
