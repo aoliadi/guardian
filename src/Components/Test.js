@@ -1,13 +1,8 @@
-// import style from "../css/news.module.css";
-import article from "../css/article.module.css";
-import useMap from "./Hooks/useMap";
-import useRandom from "./Hooks/useRandom";
-import useFetch from "./Hooks/useFetch";
-import { useState } from "react";
 import style from "../css/news.module.css";
+import article from "../css/article.module.css";
+import useFetch from "./Hooks/useFetch";
 import Moment from "react-moment";
 
-// function Test({ newsArr, imgUrls, category }) {
 function Test({ newsParams, category }) {
   const { api, params } = newsParams;
   const {
@@ -18,7 +13,6 @@ function Test({ newsParams, category }) {
     ...params,
     q: category,
   });
-  // const newsArr = newsData.response.results;
 
   return (
     <>
@@ -28,15 +22,23 @@ function Test({ newsParams, category }) {
         </header>
         <div className={article.cards}>
           <section className={article.four_cards}>
+            {newsFetchErr && <h1 className="">{newsFetchErr}</h1>}
+
             {newsIsLoading ||
               newsData.response.results.map((news) => (
                 <article className={style.horizontal} key={news.id}>
                   <div className={style.img__container}>
-                    <a href={news.webUrl} className=""></a>
+                    <a
+                      href={news.webUrl}
+                      className=""
+                      style={{
+                        backgroundImage: `url(${news.fields.thumbnail})`,
+                      }}
+                    ></a>
                   </div>
                   <div className={style.content__container}>
                     <h4 className={style.title}>
-                      <a href={news.webUrl} className={style.link}>
+                      <a href={news.fields.shortUrl} className={style.link}>
                         {news.webTitle}
                       </a>
                     </h4>

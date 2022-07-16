@@ -5,46 +5,23 @@ import useFetch from "./Hooks/useFetch";
 import { useEffect, useState } from "react";
 
 function Main() {
-  // const [category, setCategory] = useState([
-  const category = ["sports", "politics", "entertainment"];
+  const category = ["football", "politics", "entertainment"];
 
   const newsParams = {
     api: `https://content.guardianapis.com/search`,
     params: {
       "api-key": "db0f505c-2e61-417a-b77b-925796f744d7",
-      "page-size": 20,
+      "page-size": 15,
+      "order-by": "newest",
+      "show-fields": "trailText,thumbnail,byline,shortUrl",
     },
   };
-  // newsState.api = "http://localhost:8000/response";
-  // const unsplashState = {
-  //   api: `https://api.unsplash.com/photos`,
-  //   params: {
-  //     client_id: "khjyPe4b-GQR9I_WB0jw4cZDN_inbfU685jsV-AtKeI",
-  //     per_page: 20,
-  //     query: "random",
-  //   },
-  // };
-  // const {
-  //   data: newsData,
-  //   loading: newsIsLoading,
-  //   err: newsFetchErr,
-  //   // } = useFetch(newsState);
-  // } = useFetch(newsState.api, newsState.params);
-  // const { data: imgData, err: imgFetchErr } = useFetch(
-  //   unsplashState.api,
-  //   unsplashState.params
-  // );
-  // const imgUrls = imgData && imgData.map((item) => item.urls.small_s3);
-
-  // console.log(newsData);
 
   return (
     <main className={general.container}>
       <div className={article.wrapper}>
-        {/* {newsFetchErr && <h1 className="">{newsFetchErr}</h1>} */}
-        {/* {newsIsLoading || */}
         {category.map((item, index) => {
-          return <Test key={index} newsParams={newsParams} category={item} />;
+          return <Test key={item} newsParams={newsParams} category={item} />;
         })}
       </div>
     </main>

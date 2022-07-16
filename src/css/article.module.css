@@ -10,11 +10,11 @@
 }
 
 .title {
+  composes: heading from "./general.module.css";
   text-transform: capitalize;
 }
 
 .title_link {
-  composes: heading from "./general.module.css";
 }
 
 .cards {

@@ -15,13 +15,10 @@
 
 .only {
   composes: wrapper;
-  /* border: none; */
   flex-direction: column;
   padding: 3rem;
   gap: 3rem;
-  /* border: 1px solid #000; */
 
-  /* background-image: url("https://www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg"); */
   background-position: center;
   background-size: cover;
 }
@@ -34,13 +31,12 @@
 
 .img__container {
   flex: 1;
-  /* border: 1px solid #000; */
 }
 
 .img__container > a {
-  /* background-image: url("https://www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg"); */
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   width: 100%;
   height: 150px;
 }
@@ -51,12 +47,12 @@
   flex-direction: column;
   justify-content: space-between;
   margin: 1rem;
-  /* border: 1px solid #000; */
 }
 
 .title {
   height: 100%;
   line-height: 1.5rem;
+  /* font-family: Lato; */
 }
 
 .link {
@@ -72,7 +68,6 @@
   text-align: right;
   margin-top: 1.5rem;
   padding-bottom: 0.5rem;
-  /* text-transform: capitalize; */
 }
 
 .author {
