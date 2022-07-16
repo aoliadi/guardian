@@ -11,22 +11,25 @@ const useFetch = (url, params) => {
   // console.log(params);
 
   useEffect(() => {
-    axios
-      // .get(api, {
-      .get(url, {
-        params,
-      })
-      .then((res) => {
-        // console.log(res);
-        setData(res.data);
-        // setData(res[theData]);
-        setLoading(false);
-        setErr(null);
-      })
-      .catch((err) => {
-        setErr(err.message);
-        setLoading(true);
-      });
+    function fetchWithAxios() {
+      axios
+        .get(url, {
+          params,
+        })
+        .then((res) => {
+          setData(res.data);
+          // setData(res);
+
+          setLoading(false);
+          setErr(null);
+        })
+        .catch((err) => {
+          setErr(err.message);
+          setLoading(true);
+        });
+    }
+
+    fetchWithAxios();
   }, [url]);
   // console.log(data);
   return { data, loading, err };

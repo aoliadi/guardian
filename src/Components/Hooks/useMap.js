@@ -6,8 +6,6 @@ import useFetch from "./useFetch";
 function useMap(newsArr, orientation, imgArr) {
   const [theNews, setTheNews] = useState(null);
 
-  // console.log(imgArr);
-  // console.log(images[0].small);
   useEffect(() => {
     setTheNews(
       newsArr.map((news, index) => (
