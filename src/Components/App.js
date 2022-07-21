@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Main from "./Main";
 import WebFont from "webfontloader";
+import SearchBar from "./SearchBar";
 
 function App() {
   useEffect(() => {
@@ -16,6 +17,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <SearchBar />
       <Main />
       <Footer />
     </div>

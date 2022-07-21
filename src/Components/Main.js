@@ -1,8 +1,6 @@
 import article from "../css/article.module.css";
 import general from "../css/general.module.css";
 import Test from "./Test";
-import useFetch from "./Hooks/useFetch";
-import { useEffect, useState } from "react";
 
 function Main() {
   const category = ["football", "politics", "entertainment"];

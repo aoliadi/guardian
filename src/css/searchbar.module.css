@@ -1,0 +1,59 @@
+.container {
+  composes: container flex from "./general.module.css";
+  justify-content: end;
+}
+
+.input {
+  --border-color: #e8e8e8;
+
+  font-size: 1.0625em;
+  color: #333;
+
+  background-color: #fafafa;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--border-color);
+  border-radius: 2px;
+
+  width: 100%;
+  max-width: 200px;
+  min-height: 40px;
+
+  padding: 0 10px;
+
+  transition: all 0.2s ease-out;
+}
+
+.input:hover {
+  --border-color: #ccc;
+}
+
+.input:focus {
+  --border-color: #bbb;
+}
+
+.btn {
+  /* font-size: 1.25em; */
+  color: #fff;
+  cursor: pointer;
+  background-color: #4961e6;
+  /* line-height: 80px; */
+  height: 40px;
+  width: 100%;
+  max-width: 150px;
+  border-radius: 5px;
+  margin-left: 1.5rem;
+  /* padding: 1rem 0.5rem; */
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+button[disabled] {
+  background-color: #bbb;
+  color: #e8e8e8;
+  opacity: 0.8;
+  cursor: not-allowed;
+}
