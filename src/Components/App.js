@@ -65,6 +65,7 @@ function App() {
       <Main
         newsParams={newsParams}
         category={queryParameter ? queryParameter : category}
+        isQuery={Boolean(queryParameter)}
       />
       <Footer />
     </div>

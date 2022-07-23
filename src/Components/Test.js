@@ -3,7 +3,7 @@ import article from "../css/article.module.css";
 import useFetch from "./Hooks/useFetch";
 import Moment from "react-moment";
 
-function Test({ newsParams, category }) {
+function Test({ newsParams, category, isQuery }) {
   const { api, params } = newsParams;
   const {
     data: newsData,
@@ -18,7 +18,9 @@ function Test({ newsParams, category }) {
     <>
       <div className={article.wrapper}>
         <header className={article.header}>
-          <h1 className={article.title}>{category}</h1>
+          <h1 className={article.title}>
+            {isQuery ? `search results of '${category}'` : category}
+          </h1>
         </header>
         <div className={article.cards}>
           <section className={article.four_cards}>
