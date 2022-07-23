@@ -3,7 +3,6 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Main from "./Main";
 import WebFont from "webfontloader";
-import SearchBar from "./SearchBar";
 import searchbar from "../css/searchbar.module.css";
 
 function App() {
@@ -19,6 +18,15 @@ function App() {
     },
   };
 
+  const queryParameterRef = useRef(null);
+  const [queryParameter, setQueryParameter] = useState(null);
+
+  const getQueryParameterRefValue = () => {
+    if (!queryParameterRef.current.value)
+      return queryParameterRef.current.focus();
+    return queryParameterRef.current.value;
+  };
+
   useEffect(() => {
     WebFont.load({
       google: {
@@ -30,7 +38,30 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <SearchBar newsParams={newsParams} category={category} />
+      <>
+        <form action="" className={searchbar.container}>
+          <input
+            type="search"
+            name="search_query"
+            id="search_query"
+            ref={queryParameterRef}
+            className={searchbar.input}
+          />
+          <button
+            type="submit"
+            className={searchbar.btn}
+            onClick={(e) => {
+              e.preventDefault();
+              let query = getQueryParameterRefValue();
+              if (query) {
+                setQueryParameter([query]);
+              }
+            }}
+          >
+            Search
+          </button>
+        </form>
+      </>
       <Main
         newsParams={newsParams}
         category={queryParameter ? queryParameter : category}
