@@ -1,5 +1,6 @@
 import style from "../css/news.module.css";
 import article from "../css/article.module.css";
+import pagination from "../css/pagination.module.css";
 import useFetch from "./Hooks/useFetch";
 import Moment from "react-moment";
 
@@ -51,6 +52,57 @@ function Test({ newsParams, category, isQuery }) {
                 </article>
               ))}
           </section>
+        </div>
+        <div className={pagination.container}>
+          <button class={pagination.btn}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class={pagination.pag_icon}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <ul className={pagination.pages}>
+            <li className={pagination.page}>
+              <a href="" className={pagination.page_link}>
+                1
+              </a>
+            </li>
+            <li className={pagination.page}>
+              <a href="" className={pagination.page_link}>
+                2
+              </a>
+            </li>
+            <li className={pagination.page}>
+              <a href="" className={pagination.page_link}>
+                3
+              </a>
+            </li>
+          </ul>
+          <button class={pagination.btn}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class={pagination.pag_icon}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </>

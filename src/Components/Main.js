@@ -3,7 +3,6 @@ import general from "../css/general.module.css";
 import Test from "./Test";
 
 function Main({ category, newsParams, isQuery }) {
-  console.log(isQuery);
   return (
     <main className={general.container}>
       <div className={article.wrapper}>

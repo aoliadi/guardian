@@ -1,0 +1,57 @@
+.container,
+.pages {
+  composes: flex from "./general.module.css";
+  /* border: 1px solid red; */
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  /* text-align: right; */
+}
+
+.page_link {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  composes: flex from "./general.module.css";
+  align-items: center;
+  justify-content: center;
+}
+
+.page_link:hover {
+  color: #fff;
+  background-color: #087f5b;
+  text-decoration: none;
+}
+
+.btn {
+  background-color: #fff;
+  border: 1px solid #087f5b;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  composes: flex from "./general.module.css";
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background-color: #087f5b;
+}
+
+.pag_icon {
+  /* border: 1px solid #000; */
+  height: 24px;
+  width: 24px;
+  /* height: 100%; */
+  /* width: 100%; */
+  /* border-radius: 50%; */
+  stroke: #087f5b;
+}
+
+.btn:hover .pag_icon {
+  stroke: #fff;
+}
