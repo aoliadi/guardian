@@ -24,7 +24,7 @@ const useFetch = (url, params) => {
     }
 
     fetchWithAxios();
-  }, [url]);
+  }, [url, params]);
 
   return { data, loading, err };
 };
