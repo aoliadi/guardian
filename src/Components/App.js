@@ -9,14 +9,23 @@ function App() {
   const category = ["football", "politics", "entertainment"];
 
   const newsParams = {
-    api: `https://content.guardianapis.com/search`,
+    api: `https://www.starwars.com/news/wp-json/wp/v2/posts`,
     params: {
-      "api-key": "db0f505c-2e61-417a-b77b-925796f744d7",
-      "page-size": 15,
-      "order-by": "newest",
-      "show-fields": "trailText,thumbnail,byline,shortUrl",
+      per_page: 5,
+      // "api-key": "db0f505c-2e61-417a-b77b-925796f744d7",
+      // "page-size": 15,
     },
   };
+
+  // const newsParams = {
+  //   api: `https://content.guardianapis.com/search`,
+  //   params: {
+  //     "api-key": "db0f505c-2e61-417a-b77b-925796f744d7",
+  //     "page-size": 15,
+  //     "order-by": "newest",
+  //     "show-fields": "trailText,thumbnail,byline,shortUrl",
+  //   },
+  // };
 
   const queryParameterRef = useRef(null);
   const [queryParameter, setQueryParameter] = useState(null);
@@ -64,7 +73,7 @@ function App() {
       </>
       <Main
         newsParams={newsParams}
-        category={category || queryParameter}
+        category={category ? category : queryParameter}
         isQuery={Boolean(queryParameter)}
       />
       <Footer />

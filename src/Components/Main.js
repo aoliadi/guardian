@@ -11,7 +11,7 @@ function Main({ category, newsParams, isQuery }) {
             <Test
               key={item}
               newsParams={newsParams}
-              category={item}
+              // category={item}
               isQuery={isQuery}
             />
           );
