@@ -1,0 +1,7 @@
+.container {
+  composes: container grid from "./general.module.css";
+  place-items: center;
+  color: #087f5b;
+  background-color: #fafafa;
+  padding-block: 3.5rem;
+}
