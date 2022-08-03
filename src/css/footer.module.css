@@ -1,7 +1,11 @@
 .container {
   composes: container grid from "./general.module.css";
   place-items: center;
-  color: #087f5b;
+  /* color: #087f5b; */
   background-color: #fafafa;
-  padding-block: 3.5rem;
+}
+
+.container > span {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
