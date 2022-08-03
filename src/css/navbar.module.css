@@ -1,0 +1,64 @@
+.container {
+  composes: container from "./general.module.css";
+  background-color: #fafafa;
+}
+
+.list_container {
+  composes: grid from "./general.module.css";
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem 1rem;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.list_item {
+  /* border: 1px solid #000; */
+}
+
+.list_logo {
+  composes: list_item;
+  grid-column: 1 / 5;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.list_logo > .link:hover {
+  color: #087f5b;
+}
+
+.link:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.search_icon {
+  display: inline-block;
+  width: 20px;
+  cursor: pointer;
+}
+
+.search_icon:focus,
+.search_icon:hover .search_path {
+  stroke: #299ecc;
+}
+
+.search_icon:active .search_path {
+  stroke: #111516;
+  stroke-width: 2px;
+}
+
+@media (min-width: 600px) {
+  .list_container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    grid-template-columns: 1fr repeat(5, fit-content(50px));
+    gap: 2rem;
+  }
+
+  .list_logo {
+    grid-column: 1/2;
+    justify-self: start;
+  }
+}
