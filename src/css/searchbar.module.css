@@ -17,7 +17,7 @@
   border-radius: 2px;
 
   width: 100%;
-  max-width: 200px;
+  max-width: 250px;
   min-height: 40px;
 
   padding: 0 10px;
@@ -34,17 +34,13 @@
 }
 
 .btn {
-  /* font-size: 1.25em; */
   color: #fff;
   cursor: pointer;
-  background-color: #4961e6;
-  /* line-height: 80px; */
+  background-color: #087f5b;
   height: 40px;
   width: 100%;
-  max-width: 150px;
-  border-radius: 5px;
+  max-width: 120px;
   margin-left: 1.5rem;
-  /* padding: 1rem 0.5rem; */
 }
 
 .btn:hover {

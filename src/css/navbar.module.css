@@ -39,13 +39,13 @@
   cursor: pointer;
 }
 
-.search_icon:focus,
+.search_icon:focus .search_path,
 .search_icon:hover .search_path {
-  stroke: #299ecc;
+  stroke: #ccc;
 }
 
 .search_icon:active .search_path {
-  stroke: #111516;
+  stroke: #bbb;
   stroke-width: 2px;
 }
 

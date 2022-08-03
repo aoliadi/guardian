@@ -15,14 +15,7 @@ function Test({ newsParams, category, isQuery }) {
     data: newsData,
     loading: newsIsLoading,
     err: newsFetchErr,
-  } = useFetch(api, params);
-
-  // {
-  // ...params,
-  // page: currentPage,
-  // q: category,
-  // }
-  // );
+  } = useFetch(api, { ...params, _page: currentPage, q: category });
 
   return (
     <>
@@ -37,31 +30,8 @@ function Test({ newsParams, category, isQuery }) {
             {newsFetchErr && <h1 className="">{newsFetchErr}</h1>}
 
             {newsIsLoading ||
-              newsData.map((news) => (
-                <article className={style.horizontal} key={news.id}>
-                  <div className={style.img__container}>
-                    <a
-                      href={news.link}
-                      className=""
-                      style={{
-                        backgroundImage: `url()`,
-                      }}
-                    ></a>
-                  </div>
-                  <div className={style.content__container}>
-                    <h4 className={style.title}>
-                      <a href={news.link} className={style.link}>
-                        {news.title.rendered}
-                      </a>
-                    </h4>
-                    <small className={style.timestamp}>
-                      <Moment fromNow>{news.date}</Moment>
-                    </small>
-                  </div>
-                </article>
-              ))}
-            {/* {newsIsLoading ||
               newsData.response.results.map((news) => (
+                // newsData.map((news) => (
                 <article className={style.horizontal} key={news.id}>
                   <div className={style.img__container}>
                     <a
@@ -83,7 +53,7 @@ function Test({ newsParams, category, isQuery }) {
                     </small>
                   </div>
                 </article>
-              ))} */}
+              ))}
           </section>
         </div>
         <>
@@ -133,7 +103,7 @@ function Test({ newsParams, category, isQuery }) {
             pageClassName={pagination.page}
             pageLinkClassName={pagination.page_link}
             activeLinkClassName={pagination.page_link_active}
-            hrefBuilder={(item) => `https://twitter.com/aoliadi/${item}`}
+            // hrefBuilder={(item) => `https://twitter.com/aoliadi/${item}`}
             renderOnZeroPageCount={null}
           />
         </>

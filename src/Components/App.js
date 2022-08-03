@@ -1,31 +1,29 @@
 import { useEffect, useRef, useState } from "react";
+import WebFont from "webfontloader";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Main from "./Main";
-import WebFont from "webfontloader";
 import searchbar from "../css/searchbar.module.css";
 
 function App() {
-  const category = ["football", "politics", "entertainment"];
-
-  const newsParams = {
-    api: `https://www.starwars.com/news/wp-json/wp/v2/posts`,
-    params: {
-      per_page: 5,
-      // "api-key": "db0f505c-2e61-417a-b77b-925796f744d7",
-      // "page-size": 15,
-    },
-  };
+  const category = ["sports", "lifestyle", "politics", "business"];
 
   // const newsParams = {
-  //   api: `https://content.guardianapis.com/search`,
+  //   api: `https://guardian-blog.herokuapp.com/guardian`,
   //   params: {
-  //     "api-key": "db0f505c-2e61-417a-b77b-925796f744d7",
-  //     "page-size": 15,
-  //     "order-by": "newest",
-  //     "show-fields": "trailText,thumbnail,byline,shortUrl",
+  //     _page: 1,
   //   },
   // };
+
+  const newsParams = {
+    api: `https://content.guardianapis.com/search`,
+    params: {
+      "api-key": "db0f505c-2e61-417a-b77b-925796f744d7",
+      "page-size": 5,
+      "order-by": "newest",
+      "show-fields": "trailText,thumbnail,byline,shortUrl",
+    },
+  };
 
   const queryParameterRef = useRef(null);
   const [queryParameter, setQueryParameter] = useState(null);
@@ -73,7 +71,7 @@ function App() {
       </>
       <Main
         newsParams={newsParams}
-        category={category ? category : queryParameter}
+        category={queryParameter ?? category}
         isQuery={Boolean(queryParameter)}
       />
       <Footer />
