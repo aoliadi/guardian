@@ -53,7 +53,7 @@
   .list_container {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    grid-template-columns: 1fr repeat(5, fit-content(50px));
+    grid-template-columns: 1fr repeat(4, fit-content(50px));
     gap: 2rem;
   }
 

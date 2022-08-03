@@ -15,7 +15,7 @@ function Test({ newsParams, category, isQuery }) {
     data: newsData,
     loading: newsIsLoading,
     err: newsFetchErr,
-  } = useFetch(api, { ...params, _page: currentPage, q: category });
+  } = useFetch(api, { ...params, page: currentPage, q: category });
 
   return (
     <>

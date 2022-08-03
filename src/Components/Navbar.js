@@ -29,7 +29,7 @@ function Navbar() {
             Politics
           </a>
         </li>
-        <li className={navbar.list_item}>
+        {/* <li className={navbar.list_item}>
           <svg
             onClick={() => {
               console.log("search!");
@@ -47,7 +47,7 @@ function Navbar() {
               <circle cx={8} cy={8} r={7} />
             </g>
           </svg>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );
