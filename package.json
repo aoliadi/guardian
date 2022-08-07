@@ -1,6 +1,6 @@
 {
-  "name": "len",
-  "version": "0.1.0",
+  "name": "news_app",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "axios": "^0.27.2",
@@ -35,5 +35,27 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It gets its data from [The Guardian API](https://open-platform.theguardian.com/access/).",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aoliadi/guardian.git"
+  },
+  "keywords": [
+    "news",
+    "The",
+    "Guardian",
+    "rest",
+    "api",
+    "axios",
+    "react"
+  ],
+  "author": "aoliadi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aoliadi/guardian/issues"
+  },
+  "homepage": "https://github.com/aoliadi/guardian#readme"
 }
